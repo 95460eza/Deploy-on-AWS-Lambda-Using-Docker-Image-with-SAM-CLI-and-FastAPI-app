@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: template.yaml file for DEFINING an AWS Serverless Function (AWS LAMBDA) using a Docker Image ALREADY Stored in AWS ECR
+
+# Prepare to receive Default settings for ALL AWS Lambda functions in the SAM template.
+Globals:
+  # default configurations for Lambda functions
+  Function:
+  # Specifies the maximum amount of time (in seconds) that AWS Lambda allows a function to run
+    Timeout: 3
+
+Resources:
+  # Logical name assigned to the Resource of type "Lambda functions"   
+  weblambdafunction: 
+    Type: AWS::Serverless::Function
+    Properties:
+      # Specify the location of the source code for your "Lambda function". The '.' means that the source code is in the SAME directory as the template.yaml file
+      CodeUri: .
+      #  Sets a custom name for my Lambda function
+      FunctionName: mywebcontainertest
+      Architectures:
+        - x86_64
+      # ImageUri indicates where AWS Lambda should PULL the Docker image when EXECUTING the function (at RUNTIME) 
+      ImageUri: >-
+        095893807368.dkr.ecr.eu-north-1.amazonaws.com/repository-for-docker-images:mangum
+      PackageType: Image
+     
+

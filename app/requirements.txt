@@ -1,0 +1,13 @@
+#math installed already in base python
+#json installed already in base python
+#os
+
+numpy
+fastapi
+mangum
+
+#pytest
+#uvicorn NOT needed for cloud deploy. On AWS Lambda the serverless environment abstracts away the need to handle server setup as Lambda itself acts as the server.
+#scikit-learn
+#pandas
+
