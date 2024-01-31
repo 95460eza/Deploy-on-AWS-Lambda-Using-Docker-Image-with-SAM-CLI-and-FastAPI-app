@@ -72,7 +72,7 @@ jobs:
 
       - name: SAM Deploy
         run: |
-          sam deploy --stack-name stack-for-webcontainer-function2 --template-file template.yaml --s3-bucket bucket-for-webcontainer --region ${{ secrets.AWS_DEFAULT_REGION }} --capabilities CAPABILITY_IAM  --no-fail-on-empty-changeset  --resolve-image-repos 
+          sam deploy --stack-name stack-for-webcontainer-function --template-file template.yaml --s3-bucket bucket-for-webcontainer --region ${{ secrets.AWS_DEFAULT_REGION }} --capabilities CAPABILITY_IAM  --no-fail-on-empty-changeset  --resolve-image-repos 
           # DELETE ON AWS CONSOLE THE CLOUDFORMATION FOUND IN  OPTION --stack-name IF IT ALREADY EXIST (Ex: stack-for-webcontainer-function2). 
           # OTHERWISE NO CHANGESET CREATED THUS NO REDEPLOYMENT FOR CI/CD
           # the option --resolve-image-repos tells SAM where to PUSH during the deployment process the container images SPECIFIED in the template.yaml file  

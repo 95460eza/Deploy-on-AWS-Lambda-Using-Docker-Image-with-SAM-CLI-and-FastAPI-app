@@ -11,13 +11,13 @@ Globals:
 
 Resources:
   # Logical name assigned to the Resource of type "Lambda functions"   
-  weblambdafunction: 
+  fastapilambdafunction:
     Type: AWS::Serverless::Function
     Properties:
       # Specify the location of the source code for your "Lambda function". The '.' means that the source code is in the SAME directory as the template.yaml file
       CodeUri: .
       #  Sets a custom name for my Lambda function
-      FunctionName: mywebcontainertest
+      FunctionName: withcontainerfastapi
       Architectures:
         - x86_64
       # ImageUri indicates where AWS Lambda should PULL the Docker image when EXECUTING the function (at RUNTIME) 

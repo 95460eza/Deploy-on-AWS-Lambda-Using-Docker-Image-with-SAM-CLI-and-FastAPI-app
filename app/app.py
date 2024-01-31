@@ -5,20 +5,22 @@
 #import sklearn
 #import joblib
 #import numpy
-import fastapi
+#import fastapi
 from fastapi import FastAPI
-import mangum
+#import mangum
 from mangum import Mangum
 
 app_test = FastAPI()
 
 # The INDEX (main) page of the EndPoint will return the JSON file below (no INPUT needed)
-@app_test.get("/")
+@app_test.get("/", methods=['GET'])
 def index():
-    return {"message": "NATOU mon BEBE. Le MALI gagne!!"}
+    return {"message": "NATOU mon AMOUR. Le BURKINA EST VAINCU PAR LE MALI !!"}
 
 
 
+# For the deployment of a Flask application on AWS Lambda an "API Gateway" is ALSO CREATED that triggers the Lambda function.It WILL take care of the execution     
+# #necessary configurations
 # By default Uvicorn starts the ASGI application in "DEVELOPMENT" mode. To run Uvicorn in "PRODUCTION" mode, specify the --workers OPTION:  
 # uvicorn.run(app, host="0.0.0.0", port=8000, workers=4). Here we ask Uvicorn to start 4 worker processes in Production to handle concurrent requests efficiently.
 # In production, we commonly use a "PROCESS MANAGER" like Gunicorn in conjunction with Uvicorn for deploying ASGI applications. Gunicorn can spawn multiple Uvicorn worker processes 
