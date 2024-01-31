@@ -63,8 +63,10 @@ jobs:
 
       - name: Install AWS CLI and SAM CLI
         run: |
-          pip3 install awscli
-          pip3 install aws-sam-cli
+          pip3 install --upgrade awscli
+          #pip3 install --upgrade awscli
+          #pip3 install aws-sam-cli
+          pip3 install --upgrade aws-sam-cli
 
       - name: Build the AWS Serverless Application using the Docker Image stored in AWS ECR
         run: |

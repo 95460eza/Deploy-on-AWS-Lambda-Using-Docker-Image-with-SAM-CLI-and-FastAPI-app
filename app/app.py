@@ -13,7 +13,7 @@ from mangum import Mangum
 app_test = FastAPI()
 
 # The INDEX (main) page of the EndPoint will return the JSON file below (no INPUT needed)
-@app_test.get("/", methods=['GET'])
+@app_test.get("/")
 def index():
     return {"message": "NATOU mon AMOUR. Le BURKINA EST VAINCU PAR LE MALI !!"}
 
